@@ -4,7 +4,7 @@ A non-commercial fan project inspired by Resident Evil Requiem.
 
 ## Live Demo
 
-https://ТВОЯ-NETLIFY-ССЫЛКА.netlify.app
+https://re9-fan-site.netlify.app/
 
 ## Features
 
