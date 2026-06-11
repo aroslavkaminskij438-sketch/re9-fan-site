@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Profile | Resident Evil Requiem</title>
+  <meta name="description" content="Resident Evil Requiem fan-project profile page with avatar, nickname, bio and account settings.">
+
+  <link rel="icon" type="image/x-icon" href="assets/img/site%20icon/92163-resident-umbrella-corps-evil-red-png-image-high-quality_48x48.ico">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/profile.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/supabase-config.js" defer></script>
+  <script src="assets/js/profile.js" defer></script>
+</head>
+
+<body>
+  <main class="profile-shell">
+    <section class="profile-wrap" aria-label="Profile">
+
+      <section class="profile-top">
+        <div class="profile-hero">
+          <div class="profile-kicker">CASE FILE</div>
+          <h1 class="profile-h1">PROFILE</h1>
+          <div class="profile-subline">
+            Account dossier, operator identity, session status and personal survivor settings.
+          </div>
+        </div>
+
+        <aside class="profile-side">
+          <a class="profile-back" href="index.html">← Back</a>
+
+          <div class="profile-side-meta">
+            <div class="profile-side-box">
+              <div class="label">Account State</div>
+              <div class="value" id="pStateBox">Checking session...</div>
+            </div>
+
+            <div class="profile-side-box">
+              <div class="label">Profile Tier</div>
+              <div class="value">Standard Survivor Access</div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="profile-main">
+        <aside class="profile-card-left">
+          <div class="profile-id-head">
+            <div class="profile-ava">
+              <img id="pAvatar" src="assets/img/avatars/avatar.png" alt="Avatar">
+              <div class="profile-ava-ring"></div>
+            </div>
+
+            <div class="profile-name">
+              <div class="profile-name-big" id="pUser">USER</div>
+              <div class="profile-name-sub" id="pRole">STATUS: ACTIVE</div>
+
+              <div class="profile-rankline">
+                <span class="profile-rank-badge" id="pRank">SURVIVOR</span>
+                <span class="profile-rank-badge">ACCESS</span>
+                <span class="profile-rank-badge">ONLINE</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-stats">
+            <div class="profile-stat">
+              <div class="k">Tier</div>
+              <div class="v">Standard</div>
+            </div>
+
+            <div class="profile-stat">
+              <div class="k">Region</div>
+              <div class="v" id="pRegion">Unknown</div>
+            </div>
+
+            <div class="profile-stat">
+              <div class="k">Status</div>
+              <div class="v" id="pStatus">Active</div>
+            </div>
+          </div>
+
+          <div class="profile-tags">
+            <span class="profile-tag">SURVIVOR</span>
+            <span class="profile-tag">FIELD ACCESS</span>
+            <span class="profile-tag">ARCHIVE LINK</span>
+          </div>
+
+          <div class="profile-actions">
+            <button class="btn-grunge" id="btnCopyId" type="button">
+              <span>Copy User ID</span>
+            </button>
+
+            <button class="btn-grunge btn-ghost" id="btnApplyAvatar" type="button">
+              <span>Save Avatar</span>
+            </button>
+
+            <button class="btn-grunge btn-danger" id="btnLogoutProfile" type="button">
+              <span>Logout</span>
+            </button>
+          </div>
+
+          <div class="profile-hint">
+            Avatar, nickname, bio and favorite character are saved into Supabase user metadata.
+          </div>
+        </aside>
+
+        <section class="profile-right">
+          <section class="profile-panel">
+            <h2 class="profile-panel-title">Account Details</h2>
+
+            <div class="profile-rows">
+              <div class="profile-row">
+                <span class="k">Email</span>
+                <span class="v" id="pEmail">—</span>
+              </div>
+
+              <div class="profile-row">
+                <span class="k">Username</span>
+                <span class="v" id="pUsername">—</span>
+              </div>
+
+              <div class="profile-row">
+                <span class="k">User ID</span>
+                <span class="v mono" id="pId">—</span>
+              </div>
+
+              <div class="profile-row">
+                <span class="k">Created</span>
+                <span class="v" id="pCreated">—</span>
+              </div>
+
+              <div class="profile-row">
+                <span class="k">Last Sign-In</span>
+                <span class="v" id="pLastSignIn">—</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="profile-grid-2">
+            <section class="profile-panel">
+              <h2 class="profile-panel-title">Edit Identity</h2>
+
+              <div class="profile-mini-list">
+                <div class="profile-mini-item">
+                  <div class="label">Nickname</div>
+                  <input class="profile-input" id="pUsernameInput" type="text" placeholder="New nickname">
+                </div>
+
+                <div class="profile-mini-item">
+                  <div class="label">Favorite Character</div>
+                  <select class="profile-input" id="pFavoriteCharacter">
+                    <option value="Grace Ashcroft">Grace Ashcroft</option>
+                    <option value="Leon S. Kennedy">Leon S. Kennedy</option>
+                    <option value="Ada Wong">Ada Wong</option>
+                    <option value="Ashley Graham">Ashley Graham</option>
+                    <option value="Luis Serra">Luis Serra</option>
+                    <option value="Hunnigan">Hunnigan</option>
+                  </select>
+                </div>
+
+                <div class="profile-mini-item">
+                  <div class="label">Bio</div>
+                  <textarea class="profile-textarea" id="pBio" maxlength="160" placeholder="Short bio..."></textarea>
+                  <div class="profile-counter">
+                    <span id="pBioCount">0</span>/160
+                  </div>
+                </div>
+
+                <button class="btn-grunge btn-ghost" id="btnSaveProfile" type="button">
+                  <span>Save Profile</span>
+                </button>
+              </div>
+            </section>
+
+            <section class="profile-panel">
+              <h2 class="profile-panel-title">Security</h2>
+
+              <div class="profile-mini-list">
+                <div class="profile-mini-item">
+                  <div class="label">Change Password</div>
+                  <input class="profile-input" id="pNewPassword" type="password" placeholder="New password, min 8 chars">
+                </div>
+
+                <button class="btn-grunge btn-ghost" id="btnChangePassword" type="button">
+                  <span>Update Password</span>
+                </button>
+
+                <div class="profile-mini-item">
+                  <div class="label">Rule</div>
+                  <div class="value">
+                    Старый пароль сайт не показывает. Новый пароль меняется через текущую Supabase-сессию.
+                  </div>
+                </div>
+              </div>
+            </section>
+          </section>
+
+          <section class="profile-panel">
+            <h2 class="profile-panel-title">Status Panels</h2>
+
+            <div class="profile-grid-2">
+              <div class="profile-mini-list">
+                <div class="profile-mini-item">
+                  <div class="label">Clearance</div>
+                  <div class="value">Civilian / Survivor access</div>
+                </div>
+
+                <div class="profile-mini-item">
+                  <div class="label">Session State</div>
+                  <div class="value" id="pSessionState">Checking...</div>
+                </div>
+
+                <div class="profile-mini-item">
+                  <div class="label">Operator Name</div>
+                  <div class="value" id="pOperator">—</div>
+                </div>
+              </div>
+
+              <div class="profile-mini-list">
+                <div class="profile-mini-item">
+                  <div class="label">Favorite Character</div>
+                  <div class="value" id="pFavoriteView">—</div>
+                </div>
+
+                <div class="profile-mini-item">
+                  <div class="label">Bio</div>
+                  <div class="value" id="pBioView">—</div>
+                </div>
+
+                <div class="profile-mini-item">
+                  <div class="label">Network</div>
+                  <div class="value">Connected</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="profile-panel">
+            <h2 class="profile-panel-title">Avatar Selection</h2>
+
+            <div class="profile-avatar-grid" id="avatarGrid">
+              <button class="profile-avatar-option active" type="button" data-avatar="assets/img/avatars/avatar.png">
+                <img src="assets/img/avatars/avatar.png" alt="Default Avatar">
+              </button>
+
+              <button class="profile-avatar-option" type="button" data-avatar="assets/img/characters/character_img-leon-01.jpg">
+                <img src="assets/img/characters/character_img-leon-01.jpg" alt="Leon Avatar">
+              </button>
+
+              <button class="profile-avatar-option" type="button" data-avatar="assets/img/characters/character_img-ashley-01.webp">
+                <img src="assets/img/characters/character_img-ashley-01.webp" alt="Ashley Avatar">
+              </button>
+
+              <button class="profile-avatar-option" type="button" data-avatar="assets/img/characters/character_img-ada.webp">
+                <img src="assets/img/characters/character_img-ada.webp" alt="Ada Avatar">
+              </button>
+
+              <button class="profile-avatar-option" type="button" data-avatar="assets/img/characters/character_img-hannigan.webp">
+                <img src="assets/img/characters/character_img-hannigan.webp" alt="Hunnigan Avatar">
+              </button>
+
+              <button class="profile-avatar-option" type="button" data-avatar="assets/img/characters/character_img-luis-01.webp">
+                <img src="assets/img/characters/character_img-luis-01.webp" alt="Luis Avatar">
+              </button>
+            </div>
+          </section>
+
+          <section class="profile-panel">
+            <h2 class="profile-panel-title">Notes</h2>
+            <div class="profile-note">
+              Это профиль без отдельной таблицы <b>profiles</b>. Сейчас всё сохраняется в <b>user_metadata</b>.
+              Следующий уровень — отдельная таблица profiles, публичные профили, лайки, комментарии и избранное.
+            </div>
+          </section>
+        </section>
+      </section>
+
+      <div class="profile-toast" id="profileToast" hidden>Saved</div>
+    </section>
+  </main>
+</body>
+</html>

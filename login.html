@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Auth | Resident Evil Requiem</title>
+
+  <link rel="icon" type="image/x-icon" href="assets/img/site%20icon/92163-resident-umbrella-corps-evil-red-png-image-high-quality_48x48.ico">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/login.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/supabase-config.js" defer></script>
+  <script src="assets/js/login.js" defer></script>
+</head>
+
+<body class="auth-page">
+  <main class="auth-wrap">
+    <section class="auth-shell">
+
+      <aside class="auth-side">
+        <div class="auth-side-inner">
+          <div>
+            <div class="auth-kicker">Umbrella Secure Access</div>
+
+            <h1>
+              Resident <span>Evil</span><br>
+              Requiem
+            </h1>
+
+            <p>
+              Вход и регистрация для фан-проекта. Регистрация требует email, nickname и пароль.
+            </p>
+
+            <div class="auth-points">
+              <div class="auth-point">
+                <i></i>
+                <span>Показать или скрыть пароль</span>
+              </div>
+
+              <div class="auth-point">
+                <i></i>
+                <span>Проверка требований к паролю</span>
+              </div>
+
+              <div class="auth-point">
+                <i></i>
+                <span>Подтверждение пароля при регистрации</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="auth-badge">System Access Terminal</div>
+        </div>
+      </aside>
+
+      <section class="auth-card">
+        <div class="auth-top">
+          <div>
+            <h2>Access</h2>
+            <p>Выбери режим: вход для существующего пользователя или регистрация нового аккаунта.</p>
+          </div>
+
+          <div class="auth-brand">
+            Resident Evil Requiem<br>
+            Authentication Panel
+          </div>
+        </div>
+
+        <div class="auth-tabs">
+          <button class="auth-tab active" id="tab-login" type="button">Login</button>
+          <button class="auth-tab" id="tab-signup" type="button">Sign Up</button>
+        </div>
+
+        <!-- LOGIN -->
+        <form class="auth-form active" id="form-login" onsubmit="return false;">
+          <div class="auth-grid">
+            <label class="auth-field auth-field-full">
+              <span>Email</span>
+              <div class="input-wrap">
+                <input
+                  id="login-email"
+                  type="email"
+                  placeholder="name@example.com"
+                  autocomplete="email"
+                
+                  required>
+              </div>
+            </label>
+
+            <label class="auth-field auth-field-full">
+              <span>Password</span>
+              <div class="input-wrap">
+                <input
+                  id="login-password"
+                  class="password-input"
+                  type="password"
+                  placeholder="Введите пароль"
+                  autocomplete="current-password"
+                
+                  required>
+                <button class="toggle-pass" type="button" data-target="login-password">👁</button>
+              </div>
+            </label>
+          </div>
+
+          <div class="mini-note">
+            Вход выполняется через email и пароль. Nickname сохраняется в профиле после регистрации.
+          </div>
+
+          <div class="auth-actions">
+            <button class="auth-btn auth-btn-primary" id="login" type="button">Login</button>
+            <button class="auth-btn auth-btn-secondary" id="reset-password" type="button">Reset Password</button>
+            <button class="auth-btn auth-btn-danger" id="logout" type="button">Logout</button>
+          </div>
+
+          <!-- RECOVERY BLOCK. ВАЖНО: только один раз на странице -->
+          <div class="password-hint" id="recoveryBox" hidden>
+            <div class="password-hint-title">Password recovery mode</div>
+
+            <div class="auth-grid">
+              <label class="auth-field auth-field-full">
+                <span>New password</span>
+                <div class="input-wrap">
+                  <input
+                    id="recovery-password"
+                    class="password-input"
+                    type="password"
+                    placeholder="Новый пароль"
+                    autocomplete="new-password"
+                  
+                  required>
+                  <button class="toggle-pass" type="button" data-target="recovery-password">👁</button>
+                </div>
+              </label>
+
+              <label class="auth-field auth-field-full">
+                <span>Confirm new password</span>
+                <div class="input-wrap">
+                  <input
+                    id="recovery-confirm"
+                    class="password-input"
+                    type="password"
+                    placeholder="Повтори новый пароль"
+                    autocomplete="new-password"
+                  
+                  required>
+                  <button class="toggle-pass" type="button" data-target="recovery-confirm">👁</button>
+                </div>
+              </label>
+            </div>
+
+            <div class="auth-actions">
+              <button class="auth-btn auth-btn-primary" id="apply-new-password" type="button">
+                Save New Password
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <!-- SIGNUP -->
+        <form class="auth-form" id="form-signup" onsubmit="return false;">
+          <div class="auth-grid">
+            <label class="auth-field auth-field-full">
+              <span>Email</span>
+              <div class="input-wrap">
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="name@example.com"
+                  autocomplete="email"
+                
+                  required>
+              </div>
+            </label>
+
+            <label class="auth-field auth-field-full">
+              <span>Nickname</span>
+              <div class="input-wrap">
+                <input
+                  id="username"
+                  type="text"
+                  placeholder="nickname"
+                  autocomplete="username"
+                
+                  required>
+              </div>
+            </label>
+
+            <label class="auth-field auth-field-full">
+              <span>Password</span>
+              <div class="input-wrap">
+                <input
+                  id="password"
+                  class="password-input"
+                  type="password"
+                  placeholder="Создай пароль"
+                  autocomplete="new-password"
+                
+                  required>
+                <button class="toggle-pass" type="button" data-target="password">👁</button>
+              </div>
+            </label>
+
+            <label class="auth-field auth-field-full">
+              <span>Confirm password</span>
+              <div class="input-wrap">
+                <input
+                  id="confirm-password"
+                  class="password-input"
+                  type="password"
+                  placeholder="Повтори пароль"
+                  autocomplete="new-password"
+                
+                  required>
+                <button class="toggle-pass" type="button" data-target="confirm-password">👁</button>
+              </div>
+            </label>
+          </div>
+
+          <div class="password-hint">
+            <div class="password-hint-title">Password requirements</div>
+
+            <div class="rules">
+              <div class="rule" id="rule-length">Минимум 8 символов</div>
+              <div class="rule" id="rule-upper">Хотя бы 1 заглавная буква</div>
+              <div class="rule" id="rule-lower">Хотя бы 1 строчная буква</div>
+              <div class="rule" id="rule-number">Хотя бы 1 цифра</div>
+              <div class="rule" id="rule-special">Хотя бы 1 спецсимвол</div>
+              <div class="rule" id="rule-match">Пароли совпадают</div>
+            </div>
+          </div>
+
+          <div class="auth-actions">
+            <button class="auth-btn auth-btn-primary" id="signup" type="button">Create Account</button>
+            <button class="auth-btn auth-btn-secondary" id="go-login" type="button">Go to Login</button>
+          </div>
+        </form>
+
+        <pre class="auth-out" id="out" role="status" aria-live="polite">Ready.</pre>
+
+        <div class="auth-note">
+          <strong>Важно:</strong> Вход работает через email/password, а nickname сохраняется в user metadata.
+          Настоящий вход по nickname требует отдельной серверной логики.
+        </div>
+      </section>
+
+    </section>
+  </main>
+</body>
+</html>

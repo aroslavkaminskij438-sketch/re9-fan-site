@@ -1,0 +1,23 @@
+RE9 project cleanup — final pass
+
+Changed/fixed:
+1. Checked local HTML/CSS asset paths. Broken CSS references to ../img/texture/ground.jpg were replaced.
+2. Checked JS syntax for all assets/js/*.js with Node --check: OK.
+3. Stabilized script order in index.html: Supabase CDN -> supabase-config.js -> script.js -> extra animation modules -> gameplay.js.
+4. Added final CSS stabilization patch at the end of assets/css/style.css:
+   - fixes hero text layout: RESIDENT EVIL stays on one line, requiem is separate;
+   - keeps Login/Profile box absolute at top-right;
+   - centers Available now text with arrow on the right;
+   - fixes Products banner to use assets/img/characters/products_thumb_PRODUCTS.webp as real background;
+   - removes the white/dirty overlay that hid the Products image;
+   - disables heavy permanent background animation that could slow the page;
+   - keeps overlays pointer-events:none so buttons remain clickable;
+   - sets page background attachment to scroll for better performance and moving-page feel.
+5. Removed/checked for desktop.ini/.DS_Store/Thumbs.db: none found.
+6. profile.css already contains the case-file profile styling and loading/dirty states.
+7. login/profile Supabase scripts are kept only on their own pages.
+
+Still recommended before publishing:
+- Compress Demo-video.mp4 and large texture images.
+- Clean old duplicated CSS patches later. The project works through final override CSS, but style.css is still too large.
+- Test login/profile in browser with F12 Console open, because Supabase behavior depends on your live config and network.

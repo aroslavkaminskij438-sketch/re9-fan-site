@@ -1,0 +1,16 @@
+Исправлено в этой версии:
+
+1. Удалены все desktop.ini.
+2. Папка assets/img/charakters переименована в assets/img/characters.
+3. Папка assets/img/avaible now переименована в assets/img/available-now.
+4. Все ссылки в HTML/CSS/JS обновлены под новые пути.
+5. gallery.html переведён на картинки из assets/img/avatars, корневые дубли удалены.
+6. gallery.html получил простой lightbox при клике по картинке.
+7. index.html получил видимую кнопку Login, когда пользователь не авторизован.
+8. products.html: <div class="products-h1"> заменён на настоящий <h1>, удалён дублирующий inline script.
+9. login.js больше не выводит на страницу полные Supabase data/session объекты.
+10. #out больше не скрывается на login.html из-за глобального CSS.
+11. Добавлены meta description на страницы, где их не было.
+12. Удалён capcom.mp4, потому что он не был подключён ни в одном HTML/CSS/JS-файле.
+
+Важно: если где-то вручную ссылался на старые папки charakters или avaible now, используй теперь characters и available-now.

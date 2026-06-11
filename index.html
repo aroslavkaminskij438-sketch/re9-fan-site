@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Resident Evil Requiem</title>
+  <meta name="description" content="Resident Evil Requiem fan concept page with news, trailers, story, characters, locations, gameplay and products.">
+
+  <link rel="icon" type="image/x-icon" href="assets/img/site%20icon/92163-resident-umbrella-corps-evil-red-png-image-high-quality_48x48.ico">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/supabase-config.js" defer></script>
+  <script src="assets/js/script.js" defer></script>
+  <script src="assets/js/locations-re9.js" defer></script>
+  <script src="assets/js/products-anim.js" defer></script>
+  <script src="assets/js/story-auto.js" defer></script>
+  <script src="assets/js/characters-auto.js" defer></script>
+  <script src="assets/js/gameplay.js" defer></script>
+</head>
+
+<body>
+
+  <!-- RIGHT DOT NAV -->
+  <nav class="side-nav" aria-label="Section navigation">
+    <a href="#top" class="dot active" data-target="top"><span>Top</span></a>
+    <a href="#latest" class="dot" data-target="latest"><span>Latest News</span></a>
+    <a href="#trailer" class="dot" data-target="trailer"><span>Trailer</span></a>
+    <a href="#about" class="dot" data-target="about"><span>About</span></a>
+    <a href="#story" class="dot" data-target="story"><span>Story</span></a>
+    <a href="#characters" class="dot" data-target="characters"><span>Characters</span></a>
+    <a href="#locations" class="dot" data-target="locations"><span>Locations</span></a>
+    <a href="#gameplay" class="dot" data-target="gameplay"><span>Gameplay</span></a>
+    <a href="#products" class="dot" data-target="products"><span>Products</span></a>
+    <a href="#contact" class="dot" data-target="contact"><span>Support</span></a>
+  </nav>
+
+  <!-- NEWS TICKER -->
+  <div class="news-ticker" id="ticker" aria-label="Latest news ticker">
+    <div class="ticker-label" data-i18n="whats_new">What's New</div>
+
+    <div class="ticker-wrap">
+      <div class="ticker-track">
+        <span class="tick"><span class="tick-date">27/02/2026</span> Requiem is out.</span>
+        <span class="tick"><span class="tick-date">19/02/2026</span> New figures: Grace &amp; Leon (1/6 scale).</span>
+        <span class="tick"><span class="tick-date">07/02/2026</span> Collaboration announcement. Limited promo items.</span>
+
+        <span class="tick"><span class="tick-date">27/02/2026</span> Requiem is out.</span>
+        <span class="tick"><span class="tick-date">19/02/2026</span> New figures: Grace &amp; Leon (1/6 scale).</span>
+        <span class="tick"><span class="tick-date">07/02/2026</span> Collaboration announcement. Limited promo items.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="lang-switch">
+      <img src="assets/img/icons/icon_lang.svg" class="lang-globe" alt="Language">
+      <a href="#" class="lang active" data-lang="ru">RU</a>
+      <span class="lang-sep">–</span>
+      <a href="#" class="lang" data-lang="en">EN</a>
+    </div>
+
+    <div class="hero-userbox">
+      <a class="auth-link" id="loginLink" href="login.html" data-i18n="login">Login</a>
+
+      <div class="userbox" id="userBox" hidden>
+        <button class="userbtn" id="userBtn" type="button">
+          <img class="userava" id="userAva" src="" alt="User avatar">
+          <span class="usernm" id="userName">USER</span>
+          <span class="userchev">▾</span>
+        </button>
+
+        <div class="usermenu" id="userMenu" hidden>
+          <button type="button" class="um-item" id="openProfile">Profile</button>
+          <button type="button" class="um-item danger" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+    </div>
+
+    <video class="hero-video" autoplay muted loop playsinline aria-label="Resident Evil Requiem background video">
+      <source src="Demo-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-left">
+      <h1 class="title">
+        <span class="title-big" data-i18n="title_big">RESIDENT EVIL</span>
+        <span class="title-small" data-i18n="title_small">requiem</span>
+      </h1>
+
+      <time class="date" datetime="2026-02-27" data-i18n="date">2/27/2026</time>
+
+<a class="btn-grunge hero-cta" href="products.html" data-i18n="cta">
+  <span>Available now</span>
+  <span class="hero-cta-arrow">→</span>
+</a>
+    </div>
+  </header>
+
+  <!-- HERO BOTTOM -->
+  <div class="hero-bottom">
+  <div class="icon-row" aria-label="Available platforms">
+    <img src="assets/img/icons/logo-playstation-svgrepo-com.svg" alt="PS5">
+    <img src="assets/img/icons/xbox-9.svg" alt="Xbox">
+    <img src="assets/img/icons/steam-logo_svgstack_com_202603041063.svg" alt="Steam">
+    <img src="assets/img/icons/epic-games-seeklogo.svg" alt="Epic">
+  </div>
+
+  <div class="follow-row">
+    <span class="follow-text" data-i18n="follow_text">Follow</span>
+
+    <a class="social" href="https://www.youtube.com/user/ResidentEvil" target="_blank" rel="noopener">
+      <img src="assets/img/icons/YouTube-Icon-Full-Color-Logo.wine.svg" alt="YouTube">
+    </a>
+
+    <a class="social" href="https://x.com/RE_games" target="_blank" rel="noopener">
+      <img src="assets/img/icons/x-social-media-black-icon.svg" alt="X">
+    </a>
+
+    <a class="social" href="https://www.facebook.com/residentevil" target="_blank" rel="noopener">
+      <img src="assets/img/icons/facebook-app-round-white-icon.svg" alt="Facebook">
+    </a>
+
+    <a class="social" href="https://www.instagram.com/re_games/" target="_blank" rel="noopener">
+      <img src="assets/img/icons/ig-instagram-icon.svg" alt="Instagram">
+    </a>
+
+    <a class="social" href="https://www.tiktok.com/@capcom" target="_blank" rel="noopener">
+      <img src="assets/img/icons/tiktok-simplified-white-icon.svg" alt="TikTok">
+    </a>
+  </div>
+</div>
+
+  <main>
+    <!-- NEWS -->
+    <section class="section" id="latest">
+      <h2 class="section-title" data-i18n="news_title">News</h2>
+
+      <div class="news-slider" id="newsSlider">
+        <div class="news-track" id="newsTrack">
+          <article class="news-card">
+            <div class="news-top">
+              <span class="news-dot"></span>
+              <span class="news-date">2/27</span>
+              <span class="news-year">2026</span>
+            </div>
+            <img src="assets/img/avatars/thumb_news_20260227.jpg" alt="Resident Evil Requiem wallpaper news">
+            <p>Complete the survey and receive a special wallpaper!</p>
+          </article>
+
+          <article class="news-card">
+            <div class="news-top">
+              <span class="news-dot"></span>
+              <span class="news-date">2/05</span>
+              <span class="news-year">2026</span>
+            </div>
+            <img src="assets/img/avatars/thumb_news_20260205.jpg" alt="Grace and Leon figures announcement">
+            <p>Grace &amp; Leon figures announced for summer 2026.</p>
+          </article>
+
+          <article class="news-card">
+            <div class="news-top">
+              <span class="news-dot"></span>
+              <span class="news-date">1/27</span>
+              <span class="news-year">2026</span>
+            </div>
+            <img src="assets/img/avatars/thumb_news_20260113.jpg" alt="Official apparel news">
+            <p>Official apparel designs now available online.</p>
+          </article>
+
+          <article class="news-card">
+            <div class="news-top">
+              <span class="news-dot"></span>
+              <span class="news-date">1/27</span>
+              <span class="news-year">2026</span>
+            </div>
+            <img src="assets/img/avatars/thumb_news_20250925_2.jpg" alt="Collaboration items announcement">
+            <p>Introducing collaboration items and limited promo.</p>
+          </article>
+
+          <article class="news-card">
+            <div class="news-top">
+              <span class="news-dot"></span>
+              <span class="news-date">1/12</span>
+              <span class="news-year">2026</span>
+            </div>
+            <img src="assets/img/avatars/thumb_news_20251030.jpg" alt="RPD aftermath screenshots">
+            <p>New screenshots released: RPD aftermath preview.</p>
+          </article>
+
+          <article class="news-card">
+            <div class="news-top">
+              <span class="news-dot"></span>
+              <span class="news-date">1/02</span>
+              <span class="news-year">2026</span>
+            </div>
+            <img src="assets/img/avatars/thumb_news_20250913.jpg" alt="Developer message preview">
+            <p>Developer message: survival focus + exploration.</p>
+          </article>
+
+          <article class="news-card">
+            <div class="news-top">
+              <span class="news-dot"></span>
+              <span class="news-date">12/20</span>
+              <span class="news-year">2025</span>
+            </div>
+            <img src="assets/img/avatars/thumb_news_20260116_2.jpg" alt="Gameplay clip teaser">
+            <p>Gameplay clip teaser: tension, limited resources.</p>
+          </article>
+
+          <article class="news-card">
+            <div class="news-top">
+              <span class="news-dot"></span>
+              <span class="news-date">12/12</span>
+              <span class="news-year">2025</span>
+            </div>
+            <img src="assets/img/avatars/thumb_news_20251212.jpg" alt="Hospital wing concept art">
+            <p>Concept art drop: hospital wing and new enemy.</p>
+          </article>
+
+          <article class="news-card">
+            <div class="news-top">
+              <span class="news-dot"></span>
+              <span class="news-date">12/01</span>
+              <span class="news-year">2025</span>
+            </div>
+            <img src="assets/img/avatars/thumb_news_20260116_3.jpg" alt="Pre-order editions news">
+            <p>Pre-order info and editions overview soon.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="news-scroll-ui">
+        <button class="news-arrow left" type="button" aria-label="Previous news">←</button>
+
+        <div class="news-bar" id="newsBar">
+          <div class="news-progress" id="newsProgress">
+            <span class="news-handle"></span>
+          </div>
+        </div>
+
+        <button class="news-arrow right" type="button" aria-label="Next news">→</button>
+      </div>
+    </section>
+
+    <!-- TRAILER -->
+    <section class="section" id="trailer">
+      <h2 class="section-title" data-i18n="trailer_title">Trailer</h2>
+
+      <div class="trailers-wrap">
+        <div class="trailers" id="trailersTrack">
+          <a class="tr-card" href="https://www.youtube.com/watch?v=fXVy4mALHLY" target="_blank" rel="noopener">
+            <div class="tr-thumb">
+              <img src="assets/img/trailers/thumb_8.webp" alt="Trailer thumbnail 8">
+              <div class="tr-play">▶</div>
+            </div>
+            <div class="tr-cap">4th Trailer</div>
+          </a>
+
+          <a class="tr-card" href="https://www.youtube.com/watch?v=i9HIc7GZLa0" target="_blank" rel="noopener">
+            <div class="tr-thumb">
+              <img src="assets/img/trailers/thumb_7.webp" alt="Trailer thumbnail 7">
+              <div class="tr-play">▶</div>
+            </div>
+            <div class="tr-cap">Resident Evil Showcase</div>
+          </a>
+
+          <a class="tr-card" href="https://www.youtube.com/watch?v=T54OWinnymM" target="_blank" rel="noopener">
+            <div class="tr-thumb">
+              <img src="assets/img/trailers/thumb_6.webp" alt="Trailer thumbnail 6">
+              <div class="tr-play">▶</div>
+            </div>
+            <div class="tr-cap">Behind the Scenes</div>
+          </a>
+
+          <a class="tr-card" href="https://www.youtube.com/watch?v=SQODLCylKbM" target="_blank" rel="noopener">
+            <div class="tr-thumb">
+              <img src="assets/img/trailers/thumb_5.webp" alt="Trailer thumbnail 5">
+              <div class="tr-play">▶</div>
+            </div>
+            <div class="tr-cap">Gameplay Teaser</div>
+          </a>
+
+          <a class="tr-card" href="https://www.youtube.com/watch?v=0wFNN1f6hF8" target="_blank" rel="noopener">
+            <div class="tr-thumb">
+              <img src="assets/img/trailers/thumb_4.webp" alt="Trailer thumbnail 4">
+              <div class="tr-play">▶</div>
+            </div>
+            <div class="tr-cap">Story Trailer</div>
+          </a>
+
+          <a class="tr-card" href="https://www.youtube.com/watch?v=H8I39jDlvG4" target="_blank" rel="noopener">
+            <div class="tr-thumb">
+              <img src="assets/img/trailers/thumb_3.webp" alt="Trailer thumbnail 3">
+              <div class="tr-play">▶</div>
+            </div>
+            <div class="tr-cap">Monster Reveal</div>
+          </a>
+
+          <a class="tr-card" href="https://www.youtube.com/watch?v=-hiC3qpghP0" target="_blank" rel="noopener">
+            <div class="tr-thumb">
+              <img src="assets/img/trailers/thumb_2.webp" alt="Trailer thumbnail 2">
+              <div class="tr-play">▶</div>
+            </div>
+            <div class="tr-cap">Developer Message</div>
+          </a>
+
+          <a class="tr-card" href="https://www.youtube.com/watch?v=POz1-EmLsTY" target="_blank" rel="noopener">
+            <div class="tr-thumb">
+              <img src="assets/img/trailers/thumb_1.webp" alt="Trailer thumbnail 1">
+              <div class="tr-play">▶</div>
+            </div>
+            <div class="tr-cap">Launch Trailer</div>
+          </a>
+        </div>
+
+        <div class="trailers-ui">
+          <button class="trailers-arrow left" id="trailersPrev" type="button" aria-label="Previous trailer">←</button>
+          <div class="trailers-count">
+            <span id="trailersCurrent">01</span>/<span id="trailersTotal">08</span>
+          </div>
+          <button class="trailers-arrow right" id="trailersNext" type="button" aria-label="Next trailer">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-cap" id="about">
+  <div class="about-cap-wrap">
+
+    <div class="about-cap-hero" id="aboutHero">
+      <div class="about-cap-hero-bg" id="aboutHeroBg"></div>
+      <div class="about-cap-overlay"></div>
+
+      <div class="about-cap-hero-inner">
+        <div class="about-cap-kicker">ABOUT</div>
+
+        <h2 class="about-cap-title" id="aboutTitle">
+          Survival is<br>
+          just the beginning
+        </h2>
+
+        <div class="about-cap-text" id="aboutText">
+          <p>
+            Resident Evil Requiem returns to survival horror with a colder,
+            heavier tone and a stronger focus on isolation.
+          </p>
+          <p>
+            Explore ruined environments, investigate disturbing incidents,
+            and survive through careful decision-making, limited resources,
+            and constant pressure.
+          </p>
+          <p>
+            Requiem blends cinematic presentation, tense exploration, and
+            modern survival systems into a darker, more personal nightmare.
+          </p>
+        </div>
+
+        <div class="about-cap-meta">
+          <span class="about-meta-item">SURVIVAL HORROR</span>
+          <span class="about-meta-item">2026</span>
+          <span class="about-meta-item">CAPCOM FAN PROJECT</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-cap-strip" id="aboutStrip" aria-label="About gallery">
+      <button
+        class="about-cap-thumb active"
+        type="button"
+        data-bg="assets/img/resident-evil-4-ABOUT/Police-Station-Building-GIF-by-CAPCOM.gif"
+        data-title="Survival is|just the beginning"
+        data-text="Resident Evil Requiem returns to survival horror with a colder, heavier tone and a stronger focus on isolation.||Explore ruined environments, investigate disturbing incidents, and survive through careful decision-making, limited resources, and constant pressure.||Requiem blends cinematic presentation, tense exploration, and modern survival systems into a darker, more personal nightmare."
+      >
+        <img src="assets/img/resident-evil-4-ABOUT/about_img01.jpg" alt="Atmosphere preview">
+        <span class="about-thumb-label">Atmosphere</span>
+      </button>
+
+      <button
+        class="about-cap-thumb"
+        type="button"
+        data-bg="assets/img/resident-evil-4-ABOUT/about_img02.jpg"
+        data-title="Every step|feels unsafe"
+        data-text="Dark spaces, abandoned structures, and unstable environments create a constant sense of danger.||The world is built to pressure the player visually and psychologically, turning exploration into part of the horror.||You are never fully safe — even quiet moments feel tense."
+      >
+        <img src="assets/img/resident-evil-4-ABOUT/about_img02.jpg" alt="Exploration preview">
+        <span class="about-thumb-label">Exploration</span>
+      </button>
+
+      <button
+        class="about-cap-thumb"
+        type="button"
+        data-bg="assets/img/resident-evil-4-ABOUT/about_img03.jpg"
+        data-title="Faces from the|nightmare"
+        data-text="Requiem brings familiar legacy presence together with new threats and a more intimate horror story.||Character tension, mystery, and personal trauma become as important as combat itself.||The result feels more human, but also more disturbing."
+      >
+        <img src="assets/img/resident-evil-4-ABOUT/about_img03.jpg" alt="Character preview">
+        <span class="about-thumb-label">Characters</span>
+      </button>
+    </div>
+
+  </div>
+</section>
+
+    <!-- STORY -->
+    <section class="section story-cp" id="story">
+      <div class="story-cp-wrap">
+        <div class="story-cp-left">
+          <div class="story-cp-blood" aria-hidden="true"></div>
+
+          <h2 class="story-cp-title" data-i18n="story_title">Story</h2>
+
+          <div class="story-cp-text">
+            <p>
+              A body has surfaced at an abandoned hotel in the Midwest, the latest in a mysterious
+              string of deaths throughout the United States.
+            </p>
+
+            <p>
+              FBI intelligence analyst Grace Ashcroft has been assigned to the case—in the same place
+              where her mother was murdered eight years prior. But when word gets out that a police
+              officer has gone missing at the hotel, veteran agent Leon S. Kennedy is also dispatched to
+              the scene.
+            </p>
+
+            <p>
+              As Grace and Leon's paths converge, they must face their pasts and uncover the truth
+              behind the Raccoon City Incident that changed the world forever. But while the terrors of
+              their memories echo in their minds, will they relive the nightmare...or finally offer up a
+              requiem for the dead?
+            </p>
+          </div>
+        </div>
+
+        <div class="story-cp-right">
+          <div class="story-cp-stage" id="storyCpStage">
+            <div class="story-cp-card is-front" data-src="assets/img/story/story-thumb1.jpg"></div>
+            <div class="story-cp-card is-mid" data-src="assets/img/story/Resident-evil requiem-Re9 Leon-S-kennedy.jpg"></div>
+            <div class="story-cp-card is-back" data-src="assets/img/story/Raccoon-city.jpg"></div>
+          </div>
+
+          <div class="story-cp-meta">
+            <span class="story-cp-meta-label">IMAGES</span>
+
+            <div class="story-cp-dots" id="storyCpDots">
+              <button type="button" class="story-cp-dot active" data-index="0">1</button>
+              <button type="button" class="story-cp-dot" data-index="1">2</button>
+              <button type="button" class="story-cp-dot" data-index="2">3</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHARACTERS -->
+    <section class="section characters re-char" id="characters">
+      <div class="re-char-head">
+        <div class="re-char-kicker" data-i18n="characters_kicker">CHARACTERS</div>
+
+        <div class="re-char-counter">
+          <span id="capChIdx">01</span><span class="sep">–</span><span id="capChTotal">05</span>
+        </div>
+      </div>
+
+      <div class="re-char-strip">
+        <div class="re-char-thumbs" id="capChThumbs">
+
+          <button
+            class="re-char-thumb active"
+            type="button"
+            data-name="Leon S. Kennedy"
+            data-role="Veteran Agent"
+            data-text="Leon S. Kennedy, a veteran shaped by the Raccoon City Incident. Sent to assist the Requiem case as the situation escalates."
+            data-images='["assets/img/characters/character_img-leon-01.jpg","assets/img/characters/character_img-leon-02.jpg"]'
+            data-figure=""
+          >
+            <img src="assets/img/characters/character_img-leon-01.jpg" alt="Leon S. Kennedy">
+            <span class="re-char-thumb-name">Leon S. Kennedy</span>
+          </button>
+
+          <button
+            class="re-char-thumb"
+            type="button"
+            data-name="Grace Ashcroft"
+            data-role="FBI Intelligence Analyst"
+            data-text="Assigned to a case tied to an abandoned hotel. Evidence first — and every mistake has a cost."
+            data-images='["assets/img/characters/character_img-ashley-01.webp","assets/img/characters/character_img-ashley-02.webp"]'
+            data-figure=""
+          >
+            <img src="assets/img/characters/character_img-ashley-01.webp" alt="Grace Ashcroft">
+            <span class="re-char-thumb-name">Grace Ashcroft</span>
+          </button>
+
+          <button
+            class="re-char-thumb"
+            type="button"
+            data-name="The Custodian"
+            data-role="Unknown"
+            data-text="A presence tied to the hotel’s restricted floors. Doesn’t chase — corners. You hear it before you see it."
+            data-images='["assets/img/characters/character_img-ada.webp"]'
+            data-figure=""
+          >
+            <img src="assets/img/characters/character_img-ada.webp" alt="The Custodian">
+            <span class="re-char-thumb-name">The Custodian</span>
+          </button>
+
+          <button
+            class="re-char-thumb"
+            type="button"
+            data-name="Dr. Harlow"
+            data-role="Former Research Lead"
+            data-text="A name that appears in sealed files and erased reports. Knows more than he admits."
+            data-images='["assets/img/characters/character_img-hannigan.webp"]'
+            data-figure=""
+          >
+            <img src="assets/img/characters/character_img-hannigan.webp" alt="Dr. Harlow">
+            <span class="re-char-thumb-name">Dr. Harlow</span>
+          </button>
+
+          <button
+            class="re-char-thumb"
+            type="button"
+            data-name="Mara Vance"
+            data-role="Local Witness"
+            data-text="The only person who returned from the hotel twice. Her story is consistent — her details are not."
+            data-images='["assets/img/characters/character_img-luis-01.webp","assets/img/characters/character_img-luis-02.webp"]'
+            data-figure=""
+          >
+            <img src="assets/img/characters/character_img-luis-01.webp" alt="Mara Vance">
+            <span class="re-char-thumb-name">Mara Vance</span>
+          </button>
+
+        </div>
+      </div>
+
+      <div class="re-char-stage">
+        <div class="re-char-bg" id="capChFrame"></div>
+        <img class="re-char-figure" id="capChFigure" src="" alt="" hidden>
+        <div class="re-char-overlay"></div>
+
+        <button class="re-char-nav left" type="button" id="capChPrevImg" aria-label="Prev image">‹</button>
+        <button class="re-char-nav right" type="button" id="capChNextImg" aria-label="Next image">›</button>
+
+        <div class="re-char-content">
+          <div class="re-char-name" id="capChName"></div>
+          <div class="re-char-role" id="capChRole"></div>
+          <div class="re-char-text" id="capChText"></div>
+        </div>
+
+        <div class="re-char-images-meta">
+          <span class="label">IMAGES</span>
+          <span class="re-char-imgdots" id="capChImgDots"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATIONS -->
+    <section class="section loc-album" id="locations">
+      <div class="loc-album-head">
+        <div class="loc-album-title-wrap">
+          <div class="loc-album-blood" aria-hidden="true"></div>
+          <h2 class="loc-album-title" data-i18n="locations_title">Locations</h2>
+        </div>
+
+        <div class="loc-album-text">
+          Explore decayed interiors, sealed hospital wings, ruined streets, and silent
+          corridors where every location feels like a preserved piece of disaster.
+        </div>
+      </div>
+
+      <div class="loc-album-stage-wrap">
+        <div class="loc-album-stage" id="locAlbumStage">
+          <div class="loc-album-track" id="locAlbumTrack">
+            <article class="loc-album-card">
+              <img src="assets/img/story/Raccoon-city.jpg" alt="Ruined city">
+            </article>
+
+            <article class="loc-album-card">
+              <img src="assets/img/locations/location_thumb1.webp" alt="Destroyed hall">
+            </article>
+
+            <article class="loc-album-card">
+              <img src="assets/img/locations/location_thumb2.webp" alt="Red isolation corridor">
+            </article>
+
+            <article class="loc-album-card">
+              <img src="assets/img/locations/location_thumb3.webp" alt="Medical room">
+            </article>
+
+            <article class="loc-album-card">
+              <img src="assets/img/locations/location_thumb4.webp" alt="Dark corridor">
+            </article>
+          </div>
+        </div>
+
+        <div class="loc-album-ui">
+          <button class="loc-album-arrow left" id="locAlbumPrev" type="button" aria-label="Previous location">←</button>
+
+          <div class="loc-album-bar" id="locAlbumBar">
+            <div class="loc-album-progress" id="locAlbumProgress"></div>
+          </div>
+
+          <button class="loc-album-arrow right" id="locAlbumNext" type="button" aria-label="Next location">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAMEPLAY -->
+<section id="gameplay" class="section re9-gp-ref">
+  <div class="re9-gp-shell">
+
+    <!-- TOP LEFT -->
+    <article class="re9-gp-copy re9-gp-copy-top">
+      <div class="re9-gp-copy-inner">
+        <div class="re9-gp-kicker" id="gpTopKicker">ACTION</div>
+
+        <h3 class="re9-gp-title" id="gpTopTitle">Third Person View</h3>
+
+        <div class="re9-gp-text" id="gpTopText">
+          <p>The Third Person View camera perspective returns in Resident Evil Requiem.</p>
+          <p>Updated controls enhance the tension of isolated environments while keeping every encounter dangerous and deliberate.</p>
+        </div>
+
+        <div class="re9-gp-nav">
+          <button class="re9-gp-arrow" id="gpTopPrev" type="button" aria-label="Previous">‹</button>
+          <div class="re9-gp-line"><span id="gpTopLine"></span></div>
+          <button class="re9-gp-arrow" id="gpTopNext" type="button" aria-label="Next">›</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- TOP RIGHT -->
+    <article class="re9-gp-media re9-gp-media-top">
+      <div class="re9-gp-frame">
+        <video id="gpTopVideo" class="re9-gp-video" muted playsinline preload="metadata">
+          <source src="assets/img/Gameplay/01.mp4" type="video/mp4">
+        </video>
+
+        <button class="re9-gp-preview" id="gpTopPreview" type="button" aria-label="Preview third person view video">
+          <span class="re9-gp-preview-dot"></span>
+          <span class="re9-gp-preview-text">PREVIEW</span>
+        </button>
+      </div>
+    </article>
+
+    <!-- BOTTOM LEFT -->
+    <article class="re9-gp-media re9-gp-media-bottom">
+      <div class="re9-gp-frame">
+        <video id="gpBottomVideo" class="re9-gp-video" muted playsinline preload="metadata">
+          <source src="assets/img/Gameplay/02.mp4" type="video/mp4">
+        </video>
+
+        <button class="re9-gp-preview" id="gpBottomPreview" type="button" aria-label="Preview attaché case video">
+          <span class="re9-gp-preview-dot"></span>
+          <span class="re9-gp-preview-text">PREVIEW</span>
+        </button>
+      </div>
+    </article>
+
+    <!-- BOTTOM RIGHT -->
+    <article class="re9-gp-copy re9-gp-copy-bottom">
+      <div class="re9-gp-copy-inner">
+        <div class="re9-gp-kicker" id="gpBottomKicker">RESOURCE MANAGEMENT</div>
+
+        <h3 class="re9-gp-title" id="gpBottomTitle">Attaché Case</h3>
+
+        <div class="re9-gp-text" id="gpBottomText">
+          <p>Carry weapons, ammo, healing items and mission-critical objects in the attaché case.</p>
+          <p>Managing limited space under pressure is essential if you want to survive deeper into the nightmare.</p>
+        </div>
+
+        <div class="re9-gp-nav">
+          <button class="re9-gp-arrow" id="gpBottomPrev" type="button" aria-label="Previous">‹</button>
+          <div class="re9-gp-line"><span id="gpBottomLine"></span></div>
+          <button class="re9-gp-arrow" id="gpBottomNext" type="button" aria-label="Next">›</button>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section products-home-banner" id="products">
+  <div class="products-banner-head">
+    <span class="products-red-dot"></span>
+    <h2 class="section-title">Products</h2>
+  </div>
+
+  <div class="products-banner-card">
+    <div class="products-banner-overlay"></div>
+
+    <div class="products-banner-info">
+      <p class="products-release">AVAILABLE FEBRUARY 27, 2026</p>
+
+      <a class="products-big-btn" href="products.html">
+        <span>See below for details</span>
+        <span class="products-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+    <!-- SUPPORT -->
+    <section class="section support" id="contact">
+      <div class="support-grid">
+        <div class="support-info">
+          <h2 class="section-title" data-i18n="support_title">Support</h2>
+
+          <p class="support-text" data-i18n="support_text">
+            Есть вопрос, идея или баг? Напиши — отвечу на почту.
+          </p>
+
+          <div class="support-box">
+            <div class="support-row">
+              <span class="support-k">Response time</span>
+              <span class="support-v">24–72h</span>
+            </div>
+
+            <div class="support-row">
+              <span class="support-k">Topic</span>
+              <span class="support-v">Site / Game / Feedback</span>
+            </div>
+          </div>
+        </div>
+
+        <form id="supportForm" class="support-form" action="https://formspree.io/f/mreanorj" method="POST">
+          <label>
+            <span>Email</span>
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="name@example.com"
+              data-i18n-placeholder="support_email_placeholder"
+            >
+          </label>
+
+          <label>
+            <span>Message</span>
+            <textarea
+              name="message"
+              required
+              rows="7"
+              placeholder="Напиши сообщение..."
+            ></textarea>
+          </label>
+
+          <button class="btn-grunge" type="submit" data-i18n="support_send">
+            <span>Send →</span>
+          </button>
+
+          <p class="form-status" id="formStatus"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Fan-project | 2026</p>
+    <p class="footer-disclaimer">This is a non-commercial fan concept. Resident Evil and related assets belong to CAPCOM.</p>
+  </footer>
+
+</body>
+</html>
